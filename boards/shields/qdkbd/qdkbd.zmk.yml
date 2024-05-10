@@ -1,0 +1,12 @@
+file_format: "1"
+id: qdkbd
+name: qdKBD
+type: shield
+url: https://github.com/iddqdbpbbi/zmk-config
+requires: 
+  - nice nano! 2
+features:
+  - keys
+siblings:
+  - qdkbd_left
+  - qdkbd_right
