@@ -1,5 +1,5 @@
 config SHIELD_QDKBD_LEFT
-    def_bool $(shield_list_container,qdkbd_left)
+    def_bool $(shields_list_contains,qdkbd_left)
 
 config SHIELD_QDKBD_RIGHT
-    def_bool $(shield_list_container,qdkbd_right)
+    def_bool $(shields_list_contains,qdkbd_right)
