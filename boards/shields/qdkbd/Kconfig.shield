@@ -1,0 +1,5 @@
+config SHIELD_QDKBD_LEFT
+    def_bool $(shield_list_container,qdkbd_l)
+
+config SHIELD_QDKBD_RIGHT
+    def_bool $(shield_list_container,qdkbd_r)

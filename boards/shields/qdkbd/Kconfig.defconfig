@@ -1,0 +1,18 @@
+if SHIELD_QDKBD
+
+config ZMK_KEYBOARD_NAME
+    default "qdkbd"
+
+endif
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_MY_BOARD_LEFT || SHIELD_MY_BOARD_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
