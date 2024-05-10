@@ -1,10 +1,10 @@
 file_format: "1"
 id: qdkbd
-name: qdKBD
+name: qdkbd
 type: shield
 url: https://github.com/iddqdbpbbi/zmk-config
 requires: 
-  - nice nano! 2
+  - nice nano!2
 features:
   - keys
 siblings:
