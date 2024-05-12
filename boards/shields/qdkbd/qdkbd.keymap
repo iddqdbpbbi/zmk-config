@@ -66,7 +66,7 @@
     &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &kp COLON 
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &kp COMMA    &kp DOT      &kp APOS
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &kp LSHIFT   &mo SYMRU    &kp SPACE       &kp LSHIFT   &kp LSHIFT   &none
+                                           &kp LSHIFT   &SYMRU        &kp SPACE       &kp LSHIFT   &kp LSHIFT   &none
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         }; 
