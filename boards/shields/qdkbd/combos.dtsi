@@ -1,0 +1,38 @@
+// ╭──┬──┬──┬──┬──╮        ╭──┬──┬──┬──┬──╮
+// | 0| 1| 2| 3| 4|        | 5| 6| 7| 8| 9|
+// |10|11|12|13|14|        |15|16|17|18|19|
+// |20|21|22|23|24|        |25|26|27|28|29|
+// ╰──┴──┴──┼──┼──┼──╮  ╭──┼──┼──┼──┴──┴──╯
+//          |30|31|32|  |33|34|35|
+//          ╰──┴──┴──╯  ╰──┴──┴──╯
+compatible = "zmk,combos";
+combo_sln { // switch to layer navigation
+    timeout-ms = <30>;
+    key-positions = <11 12>;
+    bindings = <&mo NAV>;
+};
+combo_slfn { // switch to layer fast navigation
+    timeout-ms = <30>;
+    key-positions = <10 11 12>;
+    bindings = <&mo FNAV>;
+};
+combo_bsp { // backspace
+    timeout-ms = <30>;
+    key-positions = <7 8>;
+    bindings = <&kp BSPC>;
+};
+combo_ret { // return
+    timeout-ms = <30>;
+    key-positions = <17 18>;
+    bindings = <&kp RET>;
+};
+combo_skctrl { // sticky key LCTRL
+    timeout-ms = <30>;
+    key-positions = <11 12 13>;
+    bindings = <&sk LCTRL>;
+};
+combo_ret { // sticky key LALT
+    timeout-ms = <30>;
+    key-positions = <11 12 20>;
+    bindings = <&sk LALT>;
+};

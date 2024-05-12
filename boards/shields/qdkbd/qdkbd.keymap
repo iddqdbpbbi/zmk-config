@@ -1,22 +1,98 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define QWE 0
+#define NAV 1
+#define FNAV 2
+#define RUQ 3
+#define SYM 4
+#define NUM 5
+
+#define RU_LANG &kp LS(LC(LA(Y)))
+#define EN_LANG &kp LS(LC(LA(i)))
+
 / {
+    combos {
+        #include "combos.dsti"
+    };
+
+    macros {
+        #include "macros.dsti"
+    };
+
     keymap {
         compatible = "zmk,keymap";
-
-        default_layer {
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |   ESC   |    Q    |    W    |    E    |    R    |    T    |                                          |    Y    |    U    |    I    |    O    |    P    |    \    |
-// |   TAB   |    A    |    S    |    D    |    F    |    G    |                                          |    H    |    J    |    K    |    L    |    ;    |    '    |
-// |  SHIFT  |    Z    |    X    |    C    |    V    |    B    | CTRL+A  | CTRL+C  |  |  CTRL+V |  CTRL+X |    N    |    M    |    ,    |    .    |    /    |  R CTRL |
-//                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
+        qwerty {
+            label = "QWE";
             bindings = <
-        &kp Q    &kp W    &kp E     &kp R     &kp T                          &kp Y     &kp U     &kp I     &kp O     &kp P   
-        &kp A    &kp S    &kp D     &kp F     &kp G                          &kp H     &kp J     &kp K     &kp L     &kp SEMI
-        &kp Z    &kp X    &kp C     &kp V     &kp B                          &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH
-                                    &kp LGUI  &kp SPACE &kp SPACE  &kp BSPC  &kp RET   &kp ESC   
+// ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
+    &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
+    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &none 
+    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &none        &none        &none
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+                                           &skq LSHIFT  &mo SYM      &kp SPACE       &none       &skq LGUI    &none
+//                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
+        navigation {
+            label = "NAV";
+            bindings = <
+// ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
+    &none        &none        &none        &none        &none                                     RU_LANG()    EN_LANG()    &none        &none        &none
+    &mo FNAV     &none        &none        &sk LCTRL    &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
+    &sk LALT     &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+                                           &trans       &none        &none           &none        &trans       &none
+//                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
+            >;
+        };
+        fast_navigation {
+            label = "NPG";
+            bindings = <
+// ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
+    &none        &none        &none        &none        &none                                     &none        &none        &none        &none        &none
+    &none        &none        &none        &trans       &none                                     &kp HOME     &kp PGDN     &kp PGUP     &kp END      &none 
+    &none        &none        &none        &none        &none                                     &none        &none        &none        &none        &none
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+                                           &trans       &none        &none           &none        &trans        &none
+//                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
+            >;
+        };
+        ru_qwerty {
+            label = "RUQ";
+            bindings = <
+// ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
+    &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
+    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &kp COLON 
+    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &kp COMMA    &kp DOT      &kp APOS
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+                                           &kp LSHIFT   &mo SYMRU    &kp SPACE       &kp LSHIFT   &kp LSHIFT   &none
+//                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
+            >;
+        }; 
+        symbols {
+            label = "SYM";
+            bindings = <
+// ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
+    &kp Q        &kp RBKT     &kp E        &kp R        &kp T                                     &kp N7       &kp N8       &kp N9       &kp O        &kp P
+    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp N4       &kp N5       &kp N6       &kp L        &kp COLON 
+    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N1       &kp N2       &kp N3       &kp DOT      &kp COMMA
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+                                           &none        &kp SPACE    &kp SPACE       &skq LSHIFT  &skq LSHIFT  &none
+//                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
+            >;
+        }; 
+        symbols {
+            label = "NUM";
+            bindings = <
+// ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
+    &none        &kp F9       &kp F10      &kp F11      &kp F12                                    &kp N7       &kp N8       &kp N9       &none       &none
+    &none        &kp F5       &kp F6       &kp F7       &kp F8                                     &kp N4       &kp N5       &kp N6       &none       &none 
+    &none        &kp F1       &kp F2       &kp F3       &kp F4                                     &kp N1       &kp N2       &kp N3       &kp DOT     &none
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+                                           &none        &none        &kp SPACE       &skq LSHIFT  &skq LSHIFT  &none
+//                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
+            >;
+        }; 
     };
 };

@@ -1,0 +1,28 @@
+SLRU: SLRU { // switch language RU
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings
+        = <&macro_tap &to RUS>
+        , <&macro_tap &kp LS(LA(LC(Y)))>
+        ;
+};
+
+SLEN: SLEN { // switch language EN
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings
+        = <&macro_tap &to QWE>
+        , <&macro_tap &kp LS(LA(LC(I)))>
+        ;
+};
+
+SYMRU: SYMRU {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings
+    = <&macro_tap &kp LS(LA(LC(I)))>
+    , <&macro_press &mo SYM>
+    , <&macro_pause_for_release>
+    , <&macro_release &mo SYM>
+    , <&macro_tap &kp LS(LA(LC(Y)))>
+};
