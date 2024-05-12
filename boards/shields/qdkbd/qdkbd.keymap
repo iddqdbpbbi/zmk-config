@@ -52,7 +52,7 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp ESC      &none        &none        &none        &none                                     &SLRU        &none        &SLEN     &none        &none
+    &kp ESC      &none        &none        &none        &none                                     &SLRU        &none        &none        &none        &none
     &mo FNAV     &none        &none        &sk LALT     &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
     &sk LCTRL    &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
@@ -76,11 +76,11 @@
             label = "RUQ";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &kp COLON
-    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &kp COMMA    &kp DOT      &kp APOS
+    &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &mt P LBKT
+    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &kp SEMI
+    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &mt M RBKT   &kp COMMA    &kp DOT      &kp APOS
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &kp LSHIFT   &mo SYM      &kp SPACE       &kp BSPC     &kp LGUI     &kp RET
+                                           &kp LSHIFT   &mo SYM      &kp SPACE       &kp BSPC     &SLEN        &kp RET
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         }; 
