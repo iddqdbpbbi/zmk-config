@@ -7,9 +7,16 @@
 #define RUQ 3
 #define SYM 4
 #define NUM 5
+#define FUN 6
 
-#define RU_LANG &kp LS(LC(LA(Y)))
-#define EN_LANG &kp LS(LC(LA(I)))
+// language switch
+#define RU_LANG LS(LC(LA(Y)))
+#define EN_LANG LS(LC(LA(I)))
+
+// tap-holds
+#define BRC LEFT_BRACE RIGHT_BRACE // {}
+#define BKT LEFT_BRACKET RIGHT_BRACKET // []
+#define PAR LEFT_PARENTHESIS RIGHT_PARENTHESIS // ()
 
 / {
     combos {
@@ -20,6 +27,13 @@
         #include "macros.dtsi"
     };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        number_en {
+            if-layers = <1 4>;
+            then-layer = <5>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
         qwerty {
@@ -38,11 +52,11 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &none        &none        &none        &none        &none                                     RU_LANG      EN_LANG      &none        &none        &none
-    &mo FNAV     &none        &none        &sk LCTRL    &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
-    &sk LALT     &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
+    &none        &none        &none        &none        &none                                     &kp RU_LANG  &none        &kp EN_LANG  &none        &none
+    &mo FNAV     &none        &none        &sk LALT     &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
+    &sk LCTRL    &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &trans       &none        &none           &none        &trans       &none
+                                           &trans       &trans        &none           &none        &trans       &none
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
@@ -52,7 +66,7 @@
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &none        &none        &none        &none        &none                                     &none        &none        &none        &none        &none
     &none        &none        &none        &trans       &none                                     &kp HOME     &kp PGDN     &kp PGUP     &kp END      &none 
-    &none        &none        &none        &none        &none                                     &none        &none        &none        &none        &none
+    &trans       &none        &none        &none        &none                                     &none        &none        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            &trans       &none        &none           &none        &trans        &none
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
@@ -74,25 +88,37 @@
             label = "SYM";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp Q        &kp RBKT     &kp E        &kp R        &kp T                                     &kp N7       &kp N8       &kp N9       &kp O        &kp P
-    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp N4       &kp N5       &kp N6       &kp L        &kp COLON 
-    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N1       &kp N2       &kp N3       &kp DOT      &kp COMMA
+    &kp TILDE    &kp DQT      &kp DLLR     &kp UNDER    &kp CARET                                 &kp BSLH     &kp PLUS     &kp STAR     &kp FSLH     &kp GRAVE
+    &mt BKT      &mt BRC      &mt PAR      &kp HASH     &kp SEMI                                  &kp AMPS     &kp EQUAL    &kp MINUS    &kp COLON    &kp APOS
+    &kp PRCNT    &kp AT       &none        &kp LT       &kp GT                                    &kp PIPE     &kp EXCL     &kp COMMA    &kp DOT      &kp QMARK
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &none        &kp SPACE    &kp SPACE       &none        &none        &none
+                                           &none        &none        &none           &none        &none        &none
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
-        }; 
+        };
         numbers {
             label = "NUM";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &none        &kp F9       &kp F10      &kp F11      &kp F12                                    &kp N7       &kp N8       &kp N9       &none       &none
-    &none        &kp F5       &kp F6       &kp F7       &kp F8                                     &kp N4       &kp N5       &kp N6       &none       &none 
-    &none        &kp F1       &kp F2       &kp F3       &kp F4                                     &kp N1       &kp N2       &kp N3       &kp DOT     &none
+    &none        &none       &none         &none        &none                                     &kp N7       &kp N8       &kp N9       &none        &none
+    &mo FUN      &none       &none         &none        &none                                     &kp N4       &kp N5       &kp N6       &none        &none
+    &none        &none       &none         &none        &none                                     &kp N1       &kp N2       &kp N3       &kp DOT      &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &none        &none        &kp SPACE       &none        &none        &none
+                                           &none        &none        &none           &none        &kp N0       &none
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
-        }; 
+        };
+        function {
+            label = "FUN";
+            bindings = <
+// ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
+    &none        &none       &none         &none        &none                                     &kp F7       &kp F8       &kp F9       &kp F10      &none
+    &none        &none       &none         &none        &none                                     &kp F4       &kp F5       &kp F6       &kp F11      &none
+    &none        &none       &none         &none        &none                                     &kp F1       &kp F2       &kp F3       &kp F12      &none
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+                                           &none        &none        &none           &none        &none        &none
+//                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
+            >;
+        };
     };
 };
