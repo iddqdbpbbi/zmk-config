@@ -6,7 +6,12 @@
 //          |30|31|32|  |33|34|35|
 //          ╰──┴──┴──╯  ╰──┴──┴──╯
 compatible = "zmk,combos";
-combo_sln { // switch to layer navigation
+
+combo_esc { // switch to layer navigation
+    timeout-ms = <30>;
+    key-positions = <1 2>;
+    bindings = <&kp ESC>;
+};combo_sln { // switch to layer navigation
     timeout-ms = <30>;
     key-positions = <11 12>;
     bindings = <&mo NAV>;
