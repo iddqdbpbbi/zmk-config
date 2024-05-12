@@ -30,7 +30,7 @@
     &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &none 
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &skq LSHIFT  &mo SYM      &kp SPACE       &none       &kp LGUI      &none
+                                           &kp LSHIFT  &mo SYM      &kp SPACE       &none       &kp LGUI      &none
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
