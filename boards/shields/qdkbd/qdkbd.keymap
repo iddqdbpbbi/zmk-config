@@ -9,7 +9,7 @@
 #define NUM 5
 
 #define RU_LANG &kp LS(LC(LA(Y)))
-#define EN_LANG &kp LS(LC(LA(i)))
+#define EN_LANG &kp LS(LC(LA(I)))
 
 / {
     combos {
@@ -38,7 +38,7 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &none        &none        &none        &none        &none                                     RU_LANG()    EN_LANG()    &none        &none        &none
+    &none        &none        &none        &none        &none                                     RU_LANG      EN_LANG      &none        &none        &none
     &mo FNAV     &none        &none        &sk LCTRL    &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
     &sk LALT     &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
