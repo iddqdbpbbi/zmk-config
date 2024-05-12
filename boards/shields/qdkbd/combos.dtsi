@@ -31,7 +31,7 @@ combo_skctrl { // sticky key LCTRL
     key-positions = <11 12 13>;
     bindings = <&sk LCTRL>;
 };
-combo_ret { // sticky key LALT
+combo_skalt { // sticky key LALT
     timeout-ms = <30>;
     key-positions = <11 12 20>;
     bindings = <&sk LALT>;
