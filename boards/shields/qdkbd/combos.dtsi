@@ -8,36 +8,36 @@
 compatible = "zmk,combos";
 
 combo_esc { // switch to layer navigation
-    timeout-ms = <30>;
+    timeout-ms = <50>;
     key-positions = <1 2>;
     bindings = <&kp ESC>;
 };combo_sln { // switch to layer navigation
-    timeout-ms = <30>;
+    timeout-ms = <50>;
     key-positions = <11 12>;
     bindings = <&mo NAV>;
 };
 combo_slfn { // switch to layer fast navigation
-    timeout-ms = <30>;
+    timeout-ms = <50>;
     key-positions = <10 11 12>;
     bindings = <&mo FNAV>;
 };
 combo_bsp { // backspace
-    timeout-ms = <30>;
+    timeout-ms = <50>;
     key-positions = <7 8>;
     bindings = <&kp BSPC>;
 };
 combo_ret { // return
-    timeout-ms = <30>;
+    timeout-ms = <50>;
     key-positions = <17 18>;
     bindings = <&kp RET>;
 };
 combo_skctrl { // sticky key LCTRL
-    timeout-ms = <30>;
+    timeout-ms = <50>;
     key-positions = <11 12 13>;
     bindings = <&sk LCTRL>;
 };
 combo_skalt { // sticky key LALT
-    timeout-ms = <30>;
+    timeout-ms = <50>;
     key-positions = <11 12 20>;
     bindings = <&sk LALT>;
 };
