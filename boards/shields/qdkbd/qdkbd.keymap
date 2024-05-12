@@ -9,10 +9,6 @@
 #define NUM 5
 #define FUN 6
 
-// language switch
-#define RU_LANG LS(LC(LA(Y)))
-#define EN_LANG LS(LC(LA(I)))
-
 // tap-holds
 #define BRC LEFT_BRACE RIGHT_BRACE // {}
 #define BKT LEFT_BRACKET RIGHT_BRACKET // []
@@ -45,10 +41,10 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &none 
+    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &none
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &kp LSHIFT   &mo SYM      &kp SPACE       &none       &kp LGUI      &none
+                                           &kp LSHIFT   &mo SYM      &kp SPACE       &kp BSPC     &kp LGUI     &kp RET
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
@@ -56,11 +52,11 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &none        &none        &none        &none        &none                                     &kp RU_LANG  &none        &kp EN_LANG  &none        &none
+    &kp ESC      &none        &none        &none        &none                                     &SLRU        &none        &SLEN     &none        &none
     &mo FNAV     &none        &none        &sk LALT     &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
     &sk LCTRL    &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &trans       &trans       &kp TAB         &none        &trans       &none
+                                           &trans       &trans       &kp TAB         &trans       &trans       &trans
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
@@ -68,11 +64,11 @@
             label = "NPG";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &none        &none        &none        &none        &none                                     &none        &none        &none        &none        &none
+    &trans       &none        &none        &none        &none                                     &none        &none        &none        &none        &none
     &none        &none        &none        &trans       &none                                     &kp HOME     &kp PGDN     &kp PGUP     &kp END      &none 
     &trans       &none        &none        &none        &none                                     &none        &none        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &trans       &none        &none           &none        &trans        &none
+                                           &trans       &none        &none           &trans        &trans       &none
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
@@ -81,10 +77,10 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &kp COLON 
+    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &kp COLON
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &kp COMMA    &kp DOT      &kp APOS
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &kp LSHIFT   &SYMRU        &kp SPACE       &kp LSHIFT   &kp LSHIFT   &none
+                                           &kp LSHIFT   &mo SYM      &kp SPACE       &kp BSPC     &kp LGUI     &kp RET
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         }; 
