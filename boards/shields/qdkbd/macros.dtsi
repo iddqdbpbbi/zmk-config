@@ -2,7 +2,7 @@ SLRU: SLRU { // switch language RU
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings
-        = <&macro_tap &to RUQ>
+        = <&macro_tap &tog RUQ>
         , <&macro_tap &kp LS(LA(LC(Y)))>
         ;
 };
@@ -11,7 +11,7 @@ SLEN: SLEN { // switch language EN
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings
-        = <&macro_tap &to QWE>
+        = <&macro_tap &tog QWE>
         , <&macro_tap &kp LS(LA(LC(I)))>
         ;
 };

@@ -13,6 +13,9 @@
 #define BRC LEFT_BRACE RIGHT_BRACE // {}
 #define BKT LEFT_BRACKET RIGHT_BRACKET // []
 #define PAR LEFT_PARENTHESIS RIGHT_PARENTHESIS // ()
+#define RUS LS(LA(LC(Y)))
+#define ENG LS(LA(LC(I)))
+
 
 / {
     combos {
@@ -52,7 +55,7 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp ESC      &none        &none        &none        &none                                     &SLRU        &none        &none        &none        &none
+    &kp ESC      &none        &none        &none        &none                                     &SYMRU       &none        &SLEN        &none        &none
     &mo FNAV     &none        &none        &sk LALT     &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
     &sk LCTRL    &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
@@ -80,7 +83,7 @@
     &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &kp SEMI
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &mt M RBKT   &kp COMMA    &kp DOT      &kp APOS
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &kp LSHIFT   &mo SYM      &kp SPACE       &kp BSPC     &SLEN        &kp RET
+                                           &kp LSHIFT   &mo SYM      &kp SPACE       &kp BSPC     &kp LGUI        &kp RET
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         }; 
