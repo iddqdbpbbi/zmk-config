@@ -13,11 +13,11 @@
 
 / {
     combos {
-        #include "combos.dsti"
+        #include "combos.dtsi"
     };
 
     macros {
-        #include "macros.dsti"
+        #include "macros.dtsi"
     };
 
     keymap {
