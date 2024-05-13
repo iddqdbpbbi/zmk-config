@@ -9,8 +9,6 @@
 #define NUM 5
 #define FUN 6
 
-#define ALL_LAYERS 0 1 2 3 4 5 6
-
 // tap-holds
 #define BRC LEFT_BRACE RIGHT_BRACE // {}
 #define BKT LEFT_BRACKET RIGHT_BRACKET // []
