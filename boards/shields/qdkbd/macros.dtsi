@@ -6,6 +6,20 @@ SLRU: SLRU { // switch language RU
         , <&macro_tap &kp LS(LA(LC(Y)))>
         ;
 };
+
+TO_NAV: TO_NAV {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings
+        =  <&macro_tap &kp LS(LA(LC(I)))>
+        , <&macro_press &mo QWE>
+        , <&macro_press &mo NAV>
+        , <&macro_pause_for_release>
+        , <&macro_release &mo NAV>
+        , <&macro_tap &kp LS(LA(LC(Y)))>
+        , <&macro_release &mo QWE>
+        ;
+};
 // MACRO(nav, &macro_tap &kp K_CANCEL &macro_press &mo NAV &macro_pause_for_release &macro_release &mo NAV, 0, 0)
 // MACRO(sym, &macro_tap &kp K_CANCEL &macro_press &mo SYM &macro_pause_for_release &macro_release &mo SYM, 0, 0)
 
