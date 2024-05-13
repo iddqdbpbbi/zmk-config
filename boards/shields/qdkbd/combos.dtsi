@@ -16,7 +16,7 @@ compatible = "zmk,combos";
 // ╰──┴──┴──┼──┼──┼──╮  ╭──┼──┼──┼──┴──┴──╯
 //          |30|31|32|  |33|34|35|
 //          ╰──┴──┴──╯  ╰──┴──┴──╯
-#define QWE NAV FNAV RUQ SYM NUM FUN
+#define ALL_LAYERS QWE NAV FNAV RUQ SYM NUM FUN
 #define RU_LAYERS RUQ
 
 COMBO(esc, &kp ESC, 1 2, ALL_LAYERS)
