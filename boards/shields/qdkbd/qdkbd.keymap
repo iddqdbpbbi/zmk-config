@@ -9,6 +9,8 @@
 #define NUM 5
 #define FUN 6
 
+#define ALL_LAYERS 0 1 2 3 4 5 6
+
 // tap-holds
 #define BRC LEFT_BRACE RIGHT_BRACE // {}
 #define BKT LEFT_BRACKET RIGHT_BRACKET // []
@@ -55,7 +57,7 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp ESC      &none        &none        &none        &none                                     &SLRU        &none        &SLEN        &none        &none
+    &kp ESC      &none        &none        &none        &none                                     &SLRU       &none         &SLEN        &none        &none
     &mo FNAV     &none        &none        &sk LALT     &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
     &sk LCTRL    &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
@@ -64,7 +66,7 @@
             >;
         };
         fast_navigation {
-            label = "NPG";
+            label = "FNAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &trans       &none        &none        &none        &none                                     &none        &none        &none        &none        &none

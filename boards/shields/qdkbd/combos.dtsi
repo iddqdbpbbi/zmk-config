@@ -1,3 +1,13 @@
+
+compatible = "zmk,combos";
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    timeout-ms = <30>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+  };
 // ╭──┬──┬──┬──┬──╮        ╭──┬──┬──┬──┬──╮
 // | 0| 1| 2| 3| 4|        | 5| 6| 7| 8| 9|
 // |10|11|12|13|14|        |15|16|17|18|19|
@@ -5,39 +15,10 @@
 // ╰──┴──┴──┼──┼──┼──╮  ╭──┼──┼──┼──┴──┴──╯
 //          |30|31|32|  |33|34|35|
 //          ╰──┴──┴──╯  ╰──┴──┴──╯
-compatible = "zmk,combos";
-
-combo_esc { // switch to layer navigation
-    timeout-ms = <50>;
-    key-positions = <1 2>;
-    bindings = <&kp ESC>;
-};combo_sln { // switch to layer navigation
-    timeout-ms = <50>;
-    key-positions = <11 12>;
-    bindings = <&mo NAV>;
-};
-combo_slfn { // switch to layer fast navigation
-    timeout-ms = <50>;
-    key-positions = <10 11 12>;
-    bindings = <&mo FNAV>;
-};
-combo_bsp { // backspace
-    timeout-ms = <50>;
-    key-positions = <7 8>;
-    bindings = <&kp BSPC>;
-};
-combo_ret { // return
-    timeout-ms = <50>;
-    key-positions = <17 18>;
-    bindings = <&kp RET>;
-};
-combo_skctrl { // sticky key LCTRL
-    timeout-ms = <50>;
-    key-positions = <11 12 13>;
-    bindings = <&sk LCTRL>;
-};
-combo_skalt { // sticky key LALT
-    timeout-ms = <50>;
-    key-positions = <11 12 20>;
-    bindings = <&sk LALT>;
-};
+COMBO(esc, &kp ESC, 1 2, ALL_LAYERS)
+COMBO(sln, &mo NAV, 11 12, ALL_LAYERS) // switch to layer navigation
+COMBO(slfn, &mo FNAV, 10 11 12, ALL_LAYERS) // switch to layer fast navigation
+COMBO(bsp, &kp BSPC, 7 8, ALL_LAYERS)
+COMBO(ret, &kp RET, 17 18, ALL_LAYERS)
+COMBO(skctrl, &sk LCTRL, 11 12 13, ALL_LAYERS) // sticky key LCTRL
+COMBO(skalt, &sk LALT, 11 12 20, ALL_LAYERS)
