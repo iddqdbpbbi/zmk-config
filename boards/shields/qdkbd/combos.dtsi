@@ -16,11 +16,11 @@ compatible = "zmk,combos";
 // ╰──┴──┴──┼──┼──┼──╮  ╭──┼──┼──┼──┴──┴──╯
 //          |30|31|32|  |33|34|35|
 //          ╰──┴──┴──╯  ╰──┴──┴──╯
-#define ALL_LAYERS QWE NAV FNAV RUQ SYM NUM FUN
+#define ALL_LAYERS QWE RUQ NAV FNAV SYM NUM FUN
 
 COMBO(esc, &kp ESC, 1 2, ALL_LAYERS)
 COMBO(sln, &mo NAV, 11 12, QWE) // switch to layer navigation
-COMBO(slnR, &macro_nav, 11 12, QWE) // switch to layer navigation
+COMBO(slnR, &macro_nav, 11 12, RUQ) // switch to layer navigation
 COMBO(slfn, &mo FNAV, 10 11 12, ALL_LAYERS) // switch to layer fast navigation
 COMBO(bsp, &kp BSPC, 7 8, ALL_LAYERS)
 COMBO(ret, &kp RET, 17 18, ALL_LAYERS)
