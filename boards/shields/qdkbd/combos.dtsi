@@ -1,4 +1,3 @@
-
 compatible = "zmk,combos";
 
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
@@ -19,11 +18,11 @@ compatible = "zmk,combos";
 #define ALL_LAYERS QWE RUQ NAV FNAV SYM NUM FUN
 
 COMBO(esc, &kp ESC, 1 2, ALL_LAYERS)
-COMBO(sln, &mo NAV, 11 12, QWE) // switch to layer navigation
-COMBO(slfn, &mo FNAV, 10 11 12, ALL_LAYERS) // switch to layer fast navigation
-COMBO(bsp, &kp BSPC, 7 8, ALL_LAYERS)
-COMBO(ret, &kp RET, 17 18, ALL_LAYERS)
+COMBO(switch_layer_to_navigation, &mo NAV, 11 12, QWE RUQ) // switch to layer navigation
+COMBO(switch_layer_to_fast_navigation, &mo FNAV, 10 11 12, ALL_LAYERS) // switch to layer fast navigation
+COMBO(backspace, &kp BSPC, 7 8, ALL_LAYERS)
+COMBO(return_, &kp RET, 17 18, ALL_LAYERS)
 COMBO(skctrl, &sk LCTRL, 11 12 13, ALL_LAYERS) // sticky key LCTRL
 COMBO(skalt, &sk LALT, 11 12 20, ALL_LAYERS)
 //RU layer combos
-COMBO(slnR, &macro_nav, 11 12, RUQ) // switch to layer navigation
+//COMBO(switch_layer_to_navigation_RU, &macro_nav, 11 12, RUQ) // switch to layer navigation
