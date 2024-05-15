@@ -8,13 +8,12 @@
       tap-ms = <TAPMS>; \
       bindings = <BINDINGS>; \
   };
-//&macro_tap &kp K_CANCEL 
-MACRO(nav, &macro_tap &kp LS(LA(LC(I))) \
-           &macro_press &mo NAV \
-           &macro_pause_for_release \
-           &macro_release &mo NAV \
-           &macro_tap &kp LS(LA(LC(Y))) \
-           ,0, 0)
+// ()
+MACRO(parens, &kp LPAR &kp RPAR &kp LEFT, 0, 0)
+// []
+MACRO(braks, &kp LBKT &kp RBKT &kp LEFT, 0, 0)
+// {}
+MACRO(bcras, &kp LBRC &kp RBRC &kp LEFT, 0, 0)
 
 SLEN: SLEN { // switch language EN
     compatible = "zmk,behavior-macro";

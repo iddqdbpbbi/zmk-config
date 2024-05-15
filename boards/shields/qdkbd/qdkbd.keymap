@@ -9,13 +9,8 @@
 #define NUM 5
 #define FUN 6
 
-// tap-holds
-#define BRC LEFT_BRACE RIGHT_BRACE // {}
-#define BKT LEFT_BRACKET RIGHT_BRACKET // []
-#define PAR LEFT_PARENTHESIS RIGHT_PARENTHESIS // ()
-#define RUS LS(LA(LC(Y)))
-#define ENG LS(LA(LC(I)))
-
+#define ____ &trans
+#define XXXX &none
 
 / {
     combos {
@@ -44,8 +39,8 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &none
-    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &none        &none        &none
+    &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        XXXX
+    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            &kp LSHIFT   &mo SYM      &kp SPACE       &kp BSPC     &mo NAV      &kp RET
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
@@ -57,7 +52,7 @@
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
     &kp A        &kp S        &kp D        &kp F        &kp G                                     &kp H        &kp J        &kp K        &kp L        &kp SEMI
-    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &mt M RBKT   &kp COMMA    &kp DOT      &kp APOS
+    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        &kp COMMA    &kp DOT      &kp APOS
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            &kp LSHIFT   &SYMRU       &kp SPACE       &kp BSPC     &mo NAV      &kp RET
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
@@ -67,11 +62,11 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp ESC      &none        &none        &none        &none                                     &SLRU       &none         &SLEN        &none        &none
-    &mo FNAV     &none        &none        &sk LALT     &none                                     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none 
-    &sk LCTRL    &none        &none        &kp LC(C)    &kp LC(V)                                 &none        &none        &none        &none        &none
+    &kp ESC      XXXX         XXXX         XXXX         XXXX                                      &SLRU        XXXX         &SLEN        XXXX         XXXX
+    &mo FNAV     XXXX         XXXX         &sk LALT     XXXX                                      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    XXXX
+    &sk LCTRL    XXXX         XXXX         &kp LC(C)    &kp LC(V)                                 XXXX         XXXX         XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &trans       &trans       &kp TAB         &trans       &trans       &trans
+                                           ____         ____         &kp TAB         ____         XXXX         ____
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
@@ -91,11 +86,14 @@
             label = "SYM";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp TILDE    &kp DQT      &kp DLLR     &kp UNDER    &kp CARET                                 &kp BSLH     &kp PLUS     &kp STAR     &kp FSLH     &kp GRAVE
-    &mt BKT      &mt BRC      &mt PAR      &kp HASH     &kp SEMI                                  &kp AMPS     &kp EQUAL    &kp MINUS    &kp COLON    &kp APOS
-    &kp PRCNT    &kp AT       &none        &kp LT       &kp GT                                    &kp PIPE     &kp EXCL     &kp COMMA    &kp DOT      &kp QMARK
+    // &kp TILDE    &kp DQT      &kp DLLR     &kp UNDER    &kp CARET                                 &kp BSLH     &kp PLUS     &kp STAR     &kp FSLH     &kp GRAVE
+    &kp TILDE    &kp PIPE     &kp AMPS     &kp UNDER    &kp CARET                                 &kp PLUS     &kp N7       &kp N8       &kp N9       &kp GRAVE
+    // &mt BKT      &mt BRC      &mt PAR      &kp HASH     &kp SEMI                                  &kp AMPS     &kp EQUAL    &kp MINUS    &kp COLON    &kp APOS
+    &kp SEMI     &kp COMMA    &kp BSLH     &kp HASH     &kp COLON                                 &kp EQUAL    &kp N4       &kp N5       &kp N6       &mt DQT APOS
+    // &kp PRCNT    &kp AT       &none        &kp LT       &kp GT                                    &kp PIPE     &kp EXCL     &kp COMMA    &kp DOT      &kp QMARK
+    &kp PRCNT    &kp AT       &kp EXCL     &kp QMARK    &mt GT LT                                 &kp MINUS    &kp N1       &kp N2       &kp N3       &kp DOT
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &none        &none        &none           &none        &none        &none
+                                           &kp DLLR     XXXX         XXXX            &kp FSLH     &kp STAR     &kp N0
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };

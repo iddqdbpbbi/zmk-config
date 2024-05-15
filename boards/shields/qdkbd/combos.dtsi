@@ -17,6 +17,20 @@ compatible = "zmk,combos";
 //          ╰──┴──┴──╯  ╰──┴──┴──╯
 #define ALL_LAYERS QWE RUQ NAV FNAV SYM NUM FUN
 
+// ()
+COMBO(parenl, &kp LPAR, 16 17, SYM)
+COMBO(parenr, &kp RPAR, 17 18, SYM)
+COMBO(parens, &macro_parens, 16 17 18, SYM)
+// []
+COMBO(brakl, &kp LBKT, 6 7, SYM)
+COMBO(brakr, &kp RBKT, 7 8, SYM)
+COMBO(braks, &macro_braks, 6 7 8, SYM)
+// {}
+COMBO(bcral, &kp LBRC, 26 27, SYM)
+COMBO(bcrar, &kp RBRC, 27 28, SYM)
+COMBO(bcras, &macro_bcras, 26 27 28, SYM)
+
+
 COMBO(esc, &kp ESC, 1 2, ALL_LAYERS)
 COMBO(switch_layer_to_navigation, &mo NAV, 11 12, QWE RUQ) // switch to layer navigation
 COMBO(switch_layer_to_fast_navigation, &mo FNAV, 10 11 12, ALL_LAYERS) // switch to layer fast navigation
@@ -25,4 +39,3 @@ COMBO(return_, &kp RET, 17 18, ALL_LAYERS)
 COMBO(skctrl, &sk LCTRL, 11 12 13, ALL_LAYERS) // sticky key LCTRL
 COMBO(skalt, &sk LALT, 11 12 20, ALL_LAYERS)
 //RU layer combos
-//COMBO(switch_layer_to_navigation_RU, &macro_nav, 11 12, RUQ) // switch to layer navigation
