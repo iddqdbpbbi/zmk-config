@@ -29,7 +29,7 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &mol NAV A   &mtl LSHFT S &mtl LCTRL D &mtl LALT F  &kp G                                     &kp H        &mtr LALT J  &mtr LCTRL K &mtr LSHFT L XXXX
+    &mol NAV A   &mtl LSHIFT S &mtl LCTRL D &mtl LALT F  &kp G                                    &kp H        &mtr LALT J  &mtr LCTRL K &mtr LSHFT L XXXX
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            XXXX         &mo SYM      &kp SPACE       &kp BSPC     &kp LGUI      XXXX
@@ -41,7 +41,7 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &mol NAV A   &mtl LSHFT S &mtl LCTRL D &mtl LALT F  &kp G                                     &kp H        &mtr LALT J  &mtr LCTRL K &mtr LSHFT L &kp SEMI
+    &mol NAV A   &mtl LSHIFT S &mtl LCTRL D &mtl LALT F  &kp G                                     &kp H        &mtr LALT J  &mtr LCTRL K &mtr LSHIFT L &kp SEMI
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &mt RBKT M   &kp COMMA    &kp DOT      &kp APOS
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            XXXX         &macro_symru &kp SPACE       &kp BSPC     &kp LGUI      XXXX
