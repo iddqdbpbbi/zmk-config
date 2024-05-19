@@ -31,7 +31,7 @@ COMBO(bcrar, &kp RBRC, 27 28, SYM)
 COMBO(bcras, &macro_bcras, 26 27 28, SYM)
 
 //RU missing keys
-COMBO(ha, kp LBKT, 8 9, RUQ)
+COMBO(ha, &kp LBKT, 8 9, RUQ)
 
 COMBO(esc, &kp ESC, 1 2, ALL_LAYERS)                                   // ESC
 // COMBO(switch_layer_to_navigation, &mo NAV, 11 12, QWE RUQ)             // Switch to layer navigation
