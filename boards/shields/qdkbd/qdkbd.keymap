@@ -32,7 +32,7 @@
     &mol NAV A   &mtl LSHFT S &mtl LCTRL D &mtl LALT F  &kp G                                     &kp H        &mtr LALT J  &mtr LCTRL K &mtr LSHFT L XXXX
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           XXXX         &mo SYM      &kp SPACE       &kp BSPC     &kp GUI      XXXX
+                                           XXXX         &mo SYM      &kp SPACE       &kp BSPC     &kp LGUI      XXXX
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
@@ -56,7 +56,7 @@
     XXXX         &kp LSHFT    &kp LCTRL    &kp LALT     XXXX                                      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp RET
     &kp LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)    XXXX                                      XXXX         XXXX         XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           XXXX         &mo FNAV     &kp TAB         ____         XXXX         XXXX
+                                           XXXX         &mo FNAV     &kp TAB         ____         ____         XXXX
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
