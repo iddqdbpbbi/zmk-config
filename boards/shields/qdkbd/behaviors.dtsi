@@ -41,7 +41,6 @@ mol: mo_tap_left {
     tapping-term-ms = <280>;
     quick-tap-ms = <175>;
     bindings = <&mo>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
     global-quick-tap;
 };
