@@ -30,14 +30,12 @@ COMBO(bcral, &kp LBRC, 26 27, SYM)
 COMBO(bcrar, &kp RBRC, 27 28, SYM)
 COMBO(bcras, &macro_bcras, 26 27 28, SYM)
 
+// Minus
+COMBO(minus, &kp MINUS, 5 6, SYM)
+COMBO(fslash, &kp FSLH, 25 26, SYM)
 //RU missing keys
 COMBO(ha, &kp LBKT, 8 9, RUQ)
 
+
 COMBO(esc, &kp ESC, 1 2, ALL_LAYERS)                                   // ESC
-// COMBO(switch_layer_to_navigation, &mo NAV, 11 12, QWE RUQ)             // Switch to layer navigation
-// COMBO(switch_layer_to_fast_navigation, &mo FNAV, 10 11 12, QWE RUQ)    // Switch to layer fast navigation
 COMBO(backspace, &kp BSPC, 5 15, NAV FNAV)                             // BACKSPACE
-// COMBO(return_, &kp RET, 17 18, ALL_LAYERS)                             // RETURN
-// COMBO(skctrl, &sk LCTRL, 11 12 13, ALL_LAYERS)                         // sticky key CTRL
-// COMBO(skalt, &sk LALT, 11 12 20, ALL_LAYERS)                           // sticky key ALT
-//RU layer combos

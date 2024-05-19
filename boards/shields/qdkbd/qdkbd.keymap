@@ -6,8 +6,7 @@
 #define NAV 2
 #define FNAV 3
 #define SYM 4
-#define NUM 5
-#define FUN 6
+#define FUN 5
 
 #define ____ &trans
 #define XXXX &none
@@ -17,23 +16,11 @@
     combos {
         #include "combos.dtsi"
     };
-
     macros {
         #include "macros.dtsi"
     };
     behaviors {
         #include "behaviors.dtsi"
-    };
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        number {
-            if-layers = <NAV SYM>;
-            then-layer = <NUM>;
-        };
-        function {
-            if-layers = <FNAV SYM>;
-            then-layer = <FUN>;
-        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -42,7 +29,7 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &mol NAV A  &mtl LALT S  &mtl LCTRL D &mtl LSHIFT F &kp G                                     &kp H       &mtr LSHIFT J &mtr LCTRL K &mtr LALT L  &kp LGUI
+    &mol NAV A   &mtl LSHFT S &mtl LCTRL D &mtl LALT F  &kp G                                     &kp H        &mtr LALT J  &mtr LCTRL K &mtr LSHFT L XXXX
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            XXXX         &mo SYM      &kp SPACE       &kp BSPC     &kp GUI      XXXX
@@ -54,10 +41,10 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &mol NAV A   &mtl LALT S  &mtl LCTRL D &mtl LSHIFT F &kp G                                    &kp H       &mtr LSHIFT J &mtr LCTRL K &mtr LALT L  &mtr LGUI SEMI
-    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &mt M RBKT   &kp COMMA    &kp DOT      &kp APOS
+    &mol NAV A   &mtl LSHFT S &mtl LCTRL D &mtl LALT F  &kp G                                     &kp H        &mtr LALT J  &mtr LCTRL K &mtr LSHFT L &kp SEMI
+    &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &mt RBKT M   &kp COMMA    &kp DOT      &kp APOS
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           XXXX         &macro_symru &kp SPACE       &kp BSPC     &mo NAV      XXXX
+                                           XXXX         &macro_symru &kp SPACE       &kp BSPC     &kp LGUI      XXXX
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         }; 
@@ -65,9 +52,9 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp ESC      XXXX         XXXX         XXXX         XXXX                                      &macro_ru    XXXX         &macro_en    XXXX         XXXX
-    &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   XXXX                                      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp RET
-    XXXX         XXXX         XXXX         &kp LC(C)    &kp LC(V)                                 XXXX         XXXX         XXXX         XXXX         XXXX
+    XXXX         &kp ESC      XXXX         XXXX         XXXX                                      &macro_ru    XXXX         &macro_en    XXXX         XXXX
+    XXXX         &kp LSHFT    &kp LCTRL    &kp LALT     XXXX                                      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp RET
+    &kp LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)    XXXX                                      XXXX         XXXX         XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            XXXX         &mo FNAV     &kp TAB         ____         XXXX         XXXX
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
@@ -77,11 +64,11 @@
             label = "FNAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    XXXX         XXXX         XXXX         XXXX         XXXX                                      XXXX         XXXX         XXXX         XXXX         XXXX
-    XXXX         XXXX         XXXX         XXXX         XXXX                                      &kp HOME     &kp PGDN     &kp PGUP     &kp END      XXXX 
-    XXXX         XXXX         XXXX         XXXX         XXXX                                      XXXX         XXXX         XXXX         XXXX         XXXX
+    ____         ____         ____         ____         ____                                      ____         ____         ____         ____         ____
+    XXXX         ____         ____         ____         ____                                      &kp HOME     &kp PGDN     &kp PGUP     &kp END      ____
+    ____         ____         ____         ____         ____                                      ____         ____         ____         ____         ____
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           XXXX         XXXX         XXXX            &trans        &trans       XXXX
+                                           XXXX         XXXX         ____            ____         ____         XXXX
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
@@ -89,23 +76,11 @@
             label = "SYM";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &kp TILDE    &kp PIPE     &kp AMPS     &kp UNDER    &kp CARET                                 &kp PLUS     &kp N7       &kp N8       &kp N9       &kp GRAVE
+    &mt TILDE GRAVE &kp PIPE  &kp AMPS     &kp UNDER    &kp CARET                                 &kp PLUS     &kp N7       &kp N8       &kp N9       &kp DLLR
     &kp SEMI     &kp COMMA    &kp BSLH     &kp HASH     &kp COLON                                 &kp EQUAL    &kp N4       &kp N5       &kp N6       &mt DQT APOS
-    &kp PRCNT    &kp AT       &kp EXCL     &kp QMARK    &mt GT LT                                 &kp MINUS    &kp N1       &kp N2       &kp N3       &kp DOT
+    &kp PRCNT    &kp AT       &kp EXCL     &kp QMARK    &mt GT LT                                 &kp STAR     &kp N1       &kp N2       &kp N3       &kp DOT
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &kp DLLR     XXXX         XXXX            &kp FSLH     &kp STAR     &kp N0
-//                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
-            >;
-        };
-        numbers {
-            label = "NUM";
-            bindings = <
-// ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    &none        &none       &none         &none        &none                                     &kp N7       &kp N8       &kp N9       &none        &none
-    &mo FUN      &none       &none         &none        &none                                     &kp N4       &kp N5       &kp N6       &kp N0        &none
-    &none        &none       &none         &none        &none                                     &kp N1       &kp N2       &kp N3       &kp DOT      &none
-// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           &none        &none        &none           &none        &none        &none
+                                           XXXX         XXXX         XXXX            XXXX         ____         &kp N0
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
