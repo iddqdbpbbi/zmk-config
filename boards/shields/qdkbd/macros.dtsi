@@ -8,42 +8,40 @@
       tap-ms = <TAPMS>; \
       bindings = <BINDINGS>; \
   };
+#define TAP &macro_tap
 // ()
-MACRO(parens, &kp LPAR &kp RPAR &kp LEFT, 0, 0)
+MACRO(parens, 
+TAP &kp LPAR 
+TAP &kp RPAR 
+TAP &kp LEFT
+, 0, 0)
 // []
-MACRO(braks, &kp LBKT &kp RBKT &kp LEFT, 0, 0)
+MACRO(braks, 
+TAP &kp LBKT 
+TAP &kp RBKT 
+TAP &kp LEFT
+, 0, 0)
 // {}
-MACRO(bcras, &kp LBRC &kp RBRC &kp LEFT, 0, 0)
-
-SLEN: SLEN { // switch language EN
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings
-        = <&macro_tap &to QWE>
-        , <&macro_tap &kp LS(LA(LC(I)))>
-        ;
-};
-
-SLRU: SLRU {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings
-        = <&macro_tap &to RUQ>
-        , <&macro_tap &kp LS(LA(LC(Y)))>
-        ;
-};
-
-SYMRU: SYMRU {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings
-    = <&macro_tap &kp LS(LA(LC(I)))>
-    , <&macro_press &mo SYM>
-    , <&macro_pause_for_release>
-    , <&macro_release &mo SYM>
-    , <&macro_tap &kp LS(LA(LC(Y)))>
-    ;
-};
-// MACRO(nav, &macro_tap &kp K_CANCEL &macro_press &mo NAV &macro_pause_for_release &macro_release &mo NAV, 0, 0)
-// MACRO(sym, &macro_tap &kp K_CANCEL &macro_press &mo SYM &macro_pause_for_release &macro_release &mo SYM, 0, 0)
+MACRO(bcras, 
+TAP &kp LBRC 
+TAP &kp RBRC 
+TAP &kp LEFT
+, 0, 0)
+// Switch languages
+MACRO(en, 
+TAP &to QWE 
+TAP &kp LS(LA(LC(I)))
+, 0, 0)
+MACRO(ru, 
+TAP &to RUQ 
+TAP &kp LS(LA(LC(Y)))
+, 0, 0)
+// Symbol layer from ru layout
+MACRO(symru, 
+TAP &kp LS(LA(LC(I)))
+&macro_press &mo SYM 
+&macro_pause_for_release 
+&macro_release &mo SYM 
+TAP &kp LS(LA(LC(Y)))
+, 0, 0)
 
