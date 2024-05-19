@@ -42,10 +42,10 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &mtl LGUI A  &mtl LALT S  &mtl LCTRL D &mtl LSHIFT F &kp G                                    &kp H       &mtr LSHIFT J &mtr LCTRL K &mtr LALT L  &kp LGUI
+    &mol NAV A  &mtl LALT S  &mtl LCTRL D &mtl LSHIFT F &kp G                                     &kp H       &mtr LSHIFT J &mtr LCTRL K &mtr LALT L  &kp LGUI
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &kp M        XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           XXXX         &mo SYM      &kp SPACE       &kp BSPC     &mo NAV      XXXX
+                                           XXXX         &mo SYM      &kp SPACE       &kp BSPC     &kp GUI      XXXX
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         };
@@ -54,10 +54,10 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp Q        &kp W        &kp E        &kp R        &kp T                                     &kp Y        &kp U        &kp I        &kp O        &kp P
-    &mtl LGUI A  &mtl LALT S  &mtl LCTRL D &mtl LSHIFT F &kp G                                    &kp H       &mtr LSHIFT J &mtr LCTRL K &mtr LALT L  &mtr LGUI SEMI
+    &mol NAV A   &mtl LALT S  &mtl LCTRL D &mtl LSHIFT F &kp G                                    &kp H       &mtr LSHIFT J &mtr LCTRL K &mtr LALT L  &mtr LGUI SEMI
     &kp Z        &kp X        &kp C        &kp V        &kp B                                     &kp N        &mt M RBKT   &kp COMMA    &kp DOT      &kp APOS
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
-                                           XXXX        &macro_symru  &kp SPACE       &kp BSPC     &mo NAV      XXXX
+                                           XXXX         &macro_symru &kp SPACE       &kp BSPC     &mo NAV      XXXX
 //                                        ╰────────────┴────────────┴────────────╯  ╰────────────┴────────────┴────────────╯
             >;
         }; 
@@ -66,7 +66,7 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &kp ESC      XXXX         XXXX         XXXX         XXXX                                      &macro_ru    XXXX         &macro_en    XXXX         XXXX
-    XXXX         XXXX         XXXX         XXXX         XXXX                                      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp RET
+    &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   XXXX                                      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp RET
     XXXX         XXXX         XXXX         &kp LC(C)    &kp LC(V)                                 XXXX         XXXX         XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            XXXX         &mo FNAV     &kp TAB         ____         XXXX         XXXX
@@ -89,11 +89,8 @@
             label = "SYM";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    // &kp TILDE    &kp DQT      &kp DLLR     &kp UNDER    &kp CARET                                 &kp BSLH     &kp PLUS     &kp STAR     &kp FSLH     &kp GRAVE
     &kp TILDE    &kp PIPE     &kp AMPS     &kp UNDER    &kp CARET                                 &kp PLUS     &kp N7       &kp N8       &kp N9       &kp GRAVE
-    // &mt BKT      &mt BRC      &mt PAR      &kp HASH     &kp SEMI                                  &kp AMPS     &kp EQUAL    &kp MINUS    &kp COLON    &kp APOS
     &kp SEMI     &kp COMMA    &kp BSLH     &kp HASH     &kp COLON                                 &kp EQUAL    &kp N4       &kp N5       &kp N6       &mt DQT APOS
-    // &kp PRCNT    &kp AT       &none        &kp LT       &kp GT                                    &kp PIPE     &kp EXCL     &kp COMMA    &kp DOT      &kp QMARK
     &kp PRCNT    &kp AT       &kp EXCL     &kp QMARK    &mt GT LT                                 &kp MINUS    &kp N1       &kp N2       &kp N3       &kp DOT
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            &kp DLLR     XXXX         XXXX            &kp FSLH     &kp STAR     &kp N0
