@@ -52,7 +52,7 @@
             label = "NAV";
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
-    XXXX         &kp ESC      XXXX         XXXX         XXXX                                      &macro_ru    XXXX         &macro_en    XXXX         XXXX
+    &mo FUN      &kp ESC      XXXX         XXXX         XXXX                                      &macro_ru    XXXX         &macro_en    XXXX         XXXX
     XXXX         &kp LSHFT    &kp LCTRL    &kp LALT     XXXX                                      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp RET
     &kp LC(Z)    &kp LC(X) &mol FNAV LC(C) &kp LC(V)    XXXX                                      XXXX         XXXX         XXXX         XXXX         XXXX
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
