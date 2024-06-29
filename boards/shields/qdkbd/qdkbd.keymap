@@ -78,7 +78,7 @@
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────╮                            ╭────────────┬────────────┬────────────┬────────────┬────────────╮
     &mt TILDE GRAVE &kp PIPE  &kp AMPS     &kp UNDER    &kp CARET                                 &kp PLUS     &kp N7       &kp N8       &kp N9       &kp DLLR
-    &kp SEMI     &kp COMMA    &kp BSLH     &kp HASH     &kp COLON                                 &kp EQUAL    &kp N4       &kp N5       &kp N6       &mt DQT APOS
+    &mol NAV SEMI &mtl LSHFT COMMA &mtl LCTRL BSLH   &mtl LALT HASH &kp COLON                                 &kp EQUAL    &kp N4       &kp N5       &kp N6       &mt DQT APOS
     &kp PRCNT    &kp AT       &kp EXCL     &kp QMARK    &mt GT LT                                 &kp STAR     &kp N1       &kp N2       &kp N3       &kp DOT
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────╮  ╭────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
                                            XXXX         XXXX         XXXX            XXXX         ____         &kp N0
